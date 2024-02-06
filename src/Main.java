@@ -52,12 +52,14 @@ public class Main {
         else  return null;
     }
     static int calc(int a, int b, String oper){
-        if (oper.equals("+")) return a+b;
-        else if (oper.equals("-")) return a-b;
-        else if (oper.equals("*")) return a*b;
-        else  return a/b;
+        return switch (oper) {
+            case "+" -> a + b;
+            case "-" -> a - b;
+            case "*" -> a * b;
+            default -> a / b;
+        };
     }
-    class Roman {
+    static class Roman {
         static String[] romanArray = new String[]{"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI",
                 "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV",
                 "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI",
@@ -68,8 +70,8 @@ public class Main {
                 "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII",
                 "XCVIII", "XCIX", "C"};
         public static boolean isRoman(String val){
-            for (int i = 0; i<romanArray.length; i++){
-                if (val.equals(romanArray[i])){
+            for (String s : romanArray) {
+                if (val.equals(s)) {
                     return true;
                 }
             }
