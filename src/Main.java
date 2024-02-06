@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введи два числа (арабских или римских):");
+        System.out.println("Введи выражение:");
         String expression = scanner.nextLine();
         System.out.println(calc(expression));
     }
